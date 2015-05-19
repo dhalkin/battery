@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configuration file for functional tests -->
+
+<!-- http://www.phpunit.de/manual/current/en/appendixes.configuration.html -->
+<phpunit
+        backupGlobals               = "false"
+        backupStaticAttributes      = "false"
+        colors                      = "true"
+        convertErrorsToExceptions   = "true"
+        convertNoticesToExceptions  = "true"
+        convertWarningsToExceptions = "true"
+        processIsolation            = "false"
+        stopOnFailure               = "false"
+        syntaxCheck                 = "false"
+        bootstrap                   = "../../../app/bootstrap.php.cache" >
+
+    <testsuites>
+        <testsuite name="Project Test Suite">
+            <directory>../../../src/*/*Bundle/Tests</directory>
+            <directory>../../../src/*/Bundle/*Bundle/Tests</directory>
+            <directory>../../../src/*Bundle/Tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <groups>
+        <include>
+            <group>functional</group>
+        </include>
+    </groups>
+
+    <php>
+        <!-- Replace to absolute path of AppKernel.php for the environment -->
+        <server name="KERNEL_DIR" value="../../../app/" />
+    </php>
+
+</phpunit>

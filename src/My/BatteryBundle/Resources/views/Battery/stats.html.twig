@@ -1,0 +1,39 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <ul>
+        <li>
+            <a href="{{ path('battery_new') }}">
+                Create a new entry
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('battery') }}">
+                Show the list
+            </a>
+        </li>
+    </ul>
+
+    <h1>Battery Statistics</h1>
+
+    <table class="records_list">
+        <thead>
+        <tr>
+            <th>Type</th>
+            <th>Total Count</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entity in stat %}
+            <tr>
+
+                <td>{{ entity.type }}</td>
+                <td id="{{ entity.type }}-container-count">{{ entity.total_count }}</td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

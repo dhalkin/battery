@@ -1,0 +1,62 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <ul>
+        <li>
+            <a href="{{ path('battery_new') }}">
+                Create a new entry
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('battery') }}">
+                Show the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('battery_stats') }}">
+                Show Statistic
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('battery_clear') }}"  onclick="return confirm('Are you sure?')">
+                Delete All
+            </a>
+        </li>
+    </ul>
+
+
+    <h1>Battery list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Count</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('battery_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.type }}</td>
+                <td>{{ entity.count }}</td>
+                <td>{{ entity.name }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('battery_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('battery_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}

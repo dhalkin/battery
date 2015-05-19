@@ -1,0 +1,7 @@
+_welcome:
+    path:     /
+    defaults: { _controller: MyBatteryBundle:Battery:index }
+
+my_battery:
+    resource: "@MyBatteryBundle/Resources/config/routing.yml"
+    prefix:   /

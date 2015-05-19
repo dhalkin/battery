@@ -1,0 +1,3 @@
+my_battery_battery:
+    resource: "@MyBatteryBundle/Resources/config/routing/battery.yml"
+    prefix:   /battery
