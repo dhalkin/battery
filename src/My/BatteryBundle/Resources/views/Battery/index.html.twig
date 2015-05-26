@@ -18,7 +18,7 @@
             </a>
         </li>
         <li>
-            <a href="{{ path('battery_clear') }}"  onclick="return confirm('Are you sure?')">
+            <a href="{{ path('battery_clear') }}">
                 Delete All
             </a>
         </li>
@@ -54,6 +54,10 @@
                     </li>
                 </ul>
                 </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">there aren't any batteries</td>
             </tr>
         {% endfor %}
         </tbody>

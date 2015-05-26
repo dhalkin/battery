@@ -4,4 +4,4 @@ _welcome:
 
 my_battery:
     resource: "@MyBatteryBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /battery

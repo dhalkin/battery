@@ -1,3 +1,39 @@
-my_battery_battery:
-    resource: "@MyBatteryBundle/Resources/config/routing/battery.yml"
-    prefix:   /battery
+battery:
+    path:     /
+    defaults: { _controller: "MyBatteryBundle:Battery:index" }
+
+battery_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyBatteryBundle:Battery:show" }
+
+battery_new:
+    path:     /new
+    defaults: { _controller: "MyBatteryBundle:Battery:new" }
+
+battery_create:
+    path:     /create
+    defaults: { _controller: "MyBatteryBundle:Battery:create" }
+    methods:  POST
+
+battery_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MyBatteryBundle:Battery:edit" }
+
+battery_update:
+    path:     /{id}/update
+    defaults: { _controller: "MyBatteryBundle:Battery:update" }
+    methods:  [POST, PUT]
+
+battery_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyBatteryBundle:Battery:delete" }
+    methods:  [POST, DELETE]
+
+battery_stats:
+    path:     /stats
+    defaults: { _controller: "MyBatteryBundle:Battery:stats" }
+
+battery_clear:
+    path:     /clear
+    defaults: { _controller: "MyBatteryBundle:Battery:deleteAll" }
+    methods:  GET
